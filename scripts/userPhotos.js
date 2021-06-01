@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search)
 const albumId = params.get('albumId')
 const userId = params.get('userId')
+const bgProfile = params.get('bgProfile')
 const url="https://jsonplaceholder.typicode.com"
 
 getUser()
@@ -50,6 +51,7 @@ const createProfile = (user)=>{
 
     const userProfileImage = document.createElement('div')
     userProfileImage.classList.add('profile__image')
+    userProfileImage.style.backgroundColor = bgProfile
     userProfileImage.innerHTML = user.id
     profileHeader.appendChild(userProfileImage)
     //-------------------------------------------

@@ -9,11 +9,13 @@ fetch(`${url}/users`)
 })
 
 const createUserNode = (user)=>{
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
     const div = document.createElement('div')
     div.classList.add('user')
     //-------------------------------------------
     const userId = document.createElement('p')
     userId.classList.add('user__id')
+    userId.style.backgroundColor = `#${randomColor}`
     userId.id = user.id
     userId.innerHTML = user.id
     //-------------------------------------------
@@ -39,10 +41,10 @@ async function getAlbums($user){
             if($user.id == album.userId) albums.push({id: album.id, title: album.title})
         });
     })
-    createAlbumNode(albums, $user.id)
+    createAlbumNode(albums, $user.id, $user.style.backgroundColor)
 }
 
-const createAlbumNode=(albums, userId)=>{
+const createAlbumNode=(albums, userId, bgProfile)=>{
     $albums.innerHTML = ''
     const h2 = document.createElement('h2')
     h2.innerHTML = 'Albums:'
@@ -60,7 +62,7 @@ const createAlbumNode=(albums, userId)=>{
         div.appendChild(p)
         $albums.appendChild(div)
         p.addEventListener('click', function(){
-            window.location.href = `./pages/userPhotos.html?albumId=${this.id}&userId=${userId}`
+            window.location.href = `./pages/userPhotos.html?albumId=${this.id}&userId=${userId}&bgProfile=${bgProfile}`
         })
     })
 }
