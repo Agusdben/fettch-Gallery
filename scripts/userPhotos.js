@@ -48,7 +48,7 @@ const createProfile = (user)=>{
     const profileHeader = document.createElement('div')
     profileHeader.classList.add('profile__header')
 
-    const userProfileImage = document.createElement('p')
+    const userProfileImage = document.createElement('div')
     userProfileImage.classList.add('profile__image')
     userProfileImage.innerHTML = user.id
     profileHeader.appendChild(userProfileImage)

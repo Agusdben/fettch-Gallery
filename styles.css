@@ -26,7 +26,7 @@ img{
     padding: .5em 0;
 }
 
-.profile__container{
+.user{
     min-height: 80px;
     max-height: 80px;
     min-width: 80px;
@@ -34,7 +34,7 @@ img{
     margin-left: 1em;
 }
 
-.profile__image{
+.user__id{
     margin: auto;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ img{
     border: 2px solid #fff;
 }
 
-.profile__realname{
+.user__name{
     margin-top: .3em;
     text-align: center;
     white-space: nowrap; 
@@ -66,22 +66,51 @@ img{
     margin: 10px;
 }
 
-.profie{
-
+.profile{
+    display: flex;
+    background-color: #000;
+    padding: .5em 0;
 }
 
 .profile__container{
-
+    width: 100%;
 }
 
 .profile__header{
-
+    display: inline-block;
+    margin: 0 1em;
+    height: 80px;
 }
+
+.profile__image{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #ff0;
+    color: #000;
+    font-size: 1.5em;
+}
+
 
 .profile__info{
-
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1em;
+    margin-top: .5em;
+    text-align: center;
 }
 
-.profie__description{
+.profile__username{
+    font-size: 1.5em;
+}
 
+.profile__description{
+    margin-top: 1em;
+    padding-left: 1em;
 }

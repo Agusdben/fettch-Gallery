@@ -10,22 +10,22 @@ fetch(`${url}/users`)
 
 const createUserNode = (user)=>{
     const div = document.createElement('div')
-    div.classList.add('profile__container')
+    div.classList.add('user')
     //-------------------------------------------
-    const userProfileImage = document.createElement('p')
-    userProfileImage.classList.add('profile__image')
-    userProfileImage.id = user.id
-    userProfileImage.innerHTML = user.id
+    const userId = document.createElement('p')
+    userId.classList.add('user__id')
+    userId.id = user.id
+    userId.innerHTML = user.id
     //-------------------------------------------
-    const realname = document.createElement('p')
-    realname.classList.add('profile__realname')
-    realname.innerHTML = user.name
+    const userName = document.createElement('p')
+    userName.classList.add('user__name')
+    userName.innerHTML = user.name
     //-------------------------------------------
-    div.appendChild(userProfileImage)
-    div.appendChild(realname)
+    div.appendChild(userId)
+    div.appendChild(userName)
     $user.appendChild(div)
     //-------------------------------------------
-    userProfileImage.addEventListener('click', function(){
+    userId.addEventListener('click', function(){
         getAlbums(this)
     })
 }
